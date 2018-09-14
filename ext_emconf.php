@@ -9,27 +9,23 @@ $EM_CONF[$_EXTKEY] = [
     'author_company' => 'Ecodev',
     'version' => '1.3.0-dev',
     'constraints' =>
-    [
-        'depends' =>
         [
-            'typo3' => '7.6.0-7.99.99',
-            'speciality' => '',
-            'scheduler' => '',
-            'realurl' => '',
-            'vidi' => '',
-            'vidi_frontend' => '',
-            'natural_gallery' => '',
-            'media' => '',
-            'seo_basics' => '',
-            'typo3_console' => '',
-            'nc_staticfilecache' => '',
+            'depends' =>
+                [
+                    'typo3' => '7.6.0-7.99.99',
+                    'speciality' => '0.0.0-0.0.0',
+                    'scheduler' => '0.0.0-0.0.0',
+                    'realurl' => '0.0.0-0.0.0',
+                    'vidi' => '0.0.0-0.0.0',
+                    'vidi_frontend' => '0.0.0-0.0.0',
+                    'seo_basics' => '0.0.0-0.0.0',
+                ],
+            'conflicts' =>
+                [
+                    'css_styled_content' => '',
+                ],
+            'suggests' =>
+                [
+                ],
         ],
-        'conflicts' =>
-        [
-            'css_styled_content' => '',
-        ],
-        'suggests' =>
-        [
-        ],
-    ],
 ];
