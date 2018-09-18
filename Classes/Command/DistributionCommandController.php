@@ -33,7 +33,7 @@ class DistributionCommandController extends CommandController
 
         $this->truncateCacheTables();
         $this->cleanUpDeletedRecords();
-        $this->flushUserPreferences();
+        #$this->flushUserPreferences();
         $this->stripLanguageDiff();
 
         $this->outputLine('Exporting to SQL dump...');
@@ -41,6 +41,7 @@ class DistributionCommandController extends CommandController
         $tableWithKeys = $GLOBALS['TCA'];
         unset($tableWithKeys['tx_vidi_selection']);
         unset($tableWithKeys['tx_rtehtmlarea_acronym']);
+        unset($tableWithKeys['be_users']);
 
         $tables = array_keys($tableWithKeys);
         $tables[] = 'tx_scheduler_task'; // Add this special table.
@@ -61,11 +62,11 @@ class DistributionCommandController extends CommandController
     /**
      * @return void
      */
-    protected function flushUserPreferences()
-    {
-        $this->outputLine('Flush user preferences...');
-        $this->getDatabaseConnection()->sql_query('UPDATE be_users SET uc = ""');
-    }
+    #protected function flushUserPreferences()
+    #{
+    #    $this->outputLine('Flush user preferences...');
+    #    $this->getDatabaseConnection()->sql_query('UPDATE be_users SET uc = ""');
+    #}
 
     /**
      * @return void
@@ -182,7 +183,7 @@ class DistributionCommandController extends CommandController
      */
     protected function getDatabase()
     {
-        return $GLOBALS['TYPO3_CONF_VARS']['DB']['database'];
+        return $GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['Default']['dbname'];
     }
 
     /**
@@ -190,7 +191,7 @@ class DistributionCommandController extends CommandController
      */
     public function getUsername()
     {
-        return $GLOBALS['TYPO3_CONF_VARS']['DB']['username'];
+        return $GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['Default']['user'];
     }
 
     /**
@@ -198,7 +199,7 @@ class DistributionCommandController extends CommandController
      */
     public function getPassword()
     {
-        return $GLOBALS['TYPO3_CONF_VARS']['DB']['password'];
+        return $GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['Default']['password'];
     }
 
     /**
