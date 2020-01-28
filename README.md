@@ -1,4 +1,4 @@
-**Beware: this PHP package is abandonned**
+**Beware: this PHP package is abandoned**
 
 Speciality Distribution
 =======================
