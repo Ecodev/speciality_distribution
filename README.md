@@ -1,3 +1,5 @@
+**Beware: this PHP package is abandonned**
+
 Speciality Distribution
 =======================
 
