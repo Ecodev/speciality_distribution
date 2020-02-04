@@ -1,4 +1,4 @@
-**Beware: this PHP package is abandoned**
+**Beware: this PHP package is abandoned. The extension was providing a SQL dump to bootstrap a website. Use the EXT:introduction package instead**.
 
 Speciality Distribution
 =======================
